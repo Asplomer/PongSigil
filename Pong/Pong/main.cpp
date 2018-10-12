@@ -1,5 +1,6 @@
 //https://github.com/Asplomer/PongSigil.git
 #include "sl.h"
+/*
 #include <iostream>
 using namespace std;
 int main(int args, char *argv[])
@@ -31,4 +32,16 @@ int main(int args, char *argv[])
 	}
 	slClose();
 	return 0;
+}*/
+#include <iostream>
+//using namespace Pong;
+using namespace std;
+
+
+int main()
+{
+
+
+	//ejecutar();
+
 }
