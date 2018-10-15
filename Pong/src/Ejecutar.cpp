@@ -1,9 +1,9 @@
 #include "Ejecutar.h"
 #include <iostream>
-#include "Credit.h"
-#include "Playstate.h"
-#include "GameOver.h"
-#include "Start.h"
+//#include "Credit.h"
+//#include "Playstate.h"
+//#include "GameOver.h"
+//#include "Start.h"
 
 using namespace std;
 namespace Pong {
@@ -22,7 +22,7 @@ namespace Pong {
 
 	void ejecutar() {
 		init();
-		while (!WindowShouldClose() && gameState != End) {
+		while (slShouldClose()!=0 && gameState != End) {
 			updateEjecutar();
 			allDraw();
 		}
@@ -33,18 +33,18 @@ namespace Pong {
 #endif
 		switch (gameState) {
 		case Start: {
-			UpdateStart();
+		//	UpdateStart();
 
 		}break;
 		case Play: {
-			updatePlay();
+		//	updatePlay();
 
 		}break;
 		case GameOver: {
-			UpdateOver();
+		//	UpdateOver();
 		}break;
 		case Credit: {
-			updateCredit();
+		//	updateCredit();
 
 		}break;
 		case End: {
@@ -57,22 +57,22 @@ namespace Pong {
 
 	}
 	static void allDraw() {
-		BeginDrawing();
-		ClearBackground(BLACK);
+		//BeginDrawing();
+		//ClearBackground(BLACK);
 
 		switch (gameState) {
 		case Start: {
 
-			DrawStart();
+		//	DrawStart();
 		}break;
 		case Play: {
-			drawPlay();
+		//	drawPlay();
 		}break;
 		case GameOver: {
-			DrawOver();
+		//	DrawOver();
 		}break;
 		case Credit: {
-			drawCredit();
+		//	drawCredit();
 
 		}break;
 		case End: {
@@ -80,21 +80,15 @@ namespace Pong {
 		}break;
 		}
 
-		EndDrawing();
+		//EndDrawing();
 	}
 	static void init() {
 		int screenWidth = 800;
 		int screenHeight = 450;
 
-		InitWindow(screenWidth, screenHeight, "raylib [core] example - keyboard input");
-#ifdef AUDIO
-		InitAudioDevice();
+		slWindow(screenWidth, screenHeight, "raylib [core] example - keyboard input", 0);
 
-		music = LoadMusicStream("res/menusong.ogg");
-		fxWav = LoadSound("res/Hit_Hurt.wav");
-		PlayMusicStream(music);
-#endif
-		SetExitKey(0);
+		//SetExitKey(0);
 
 		bool exit = false;
 

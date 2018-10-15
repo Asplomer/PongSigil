@@ -1,7 +1,8 @@
 #ifndef PLAYSTATE_H
 #define PLAYSTATE_H
 #include <iostream>
-#include "raylib.h"
+//#include "raylib.h"
+#include "sl.h"
 #include "Ejecutar.h"
 
 

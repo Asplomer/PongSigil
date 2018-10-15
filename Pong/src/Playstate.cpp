@@ -1,7 +1,8 @@
 #include "Playstate.h"
 namespace Pong {
 
-	static Rectangle ball = { (float)screenWidth / 2, (float)screenHeight / 2 ,(float)SQUARE, (float)SQUARE };//x,y,w,h
+//	static Rectangle ball = { (float)screenWidth / 2, (float)screenHeight / 2 ,(float)SQUARE, (float)SQUARE };//x,y,w,h
+	static slRectangleFill ball = { (float)screenWidth / 2, (float)screenHeight / 2 ,(float)SQUARE, (float)SQUARE }
 	static Rectangle bar1 = { (float)POSX, (float)POSY, (float)WIDTH, (float)HEIGHT };
 	static Rectangle bar2 = { (float)screenWidth - 50, 0.0f + (float)POSY, (float)WIDTH, (float)HEIGHT };
 	static bool started = false;
@@ -44,51 +45,6 @@ namespace Pong {
 		//UPDATE: segun la pos de y en donde pega la bola, usar seno o coseno y multiplicarlo con un angulo max ej:
 		// si pega en el centro, va a dar sen(0) * 45º= 0º y si pega arriba-> sen(-30) * 45º = -45º; con valores intermedios dando entre esos angulos
 		//usando cmath
-		if (CheckCollisionRecs(bar1, ball) || CheckCollisionRecs(bar2, ball)) {
-			if (ballLeft && CheckCollisionRecs(bar2, ball)) {
-#ifdef AUDIO
-				PlaySound(fxWav);
-#endif
-				if (ball.x > bar2.x && ball.y < bar2.y + bar2.height) {
-					ball.y = bar2.y - ball.height+1;
-					ballUp = false;
-				}
-				else
-					if (ball.x > bar2.x && ball.y > bar2.y - ball.height) {
-						ball.y = bar2.y + bar2.height-1;
-						ballUp = true;
-					}
-					//else
-						ballLeft = false;
-#ifdef AUDIO
-				PlaySound(fxWav);
-#endif
-
-				ball.x -= 2/*screenWidth - 45 - SQUARE*/;
-				speedBoost += 0.3f;
-			}
-			else if (!ballLeft && CheckCollisionRecs(bar1, ball)) {
-				
-				if (ball.x < bar1.x && ball.y < bar1.y - bar1.height) {
-					ball.y = bar1.y - bar1.height-1;
-					ballUp = false;
-				}
-				else
-					if (ball.x < bar1.x && ball.y > bar1.y + ball.height) {
-						ball.y = bar1.y + bar1.height+1;
-						ballUp = true;
-					}
-					//else
-				ballLeft = true;
-#ifdef AUDIO
-				PlaySound(fxWav);
-#endif
-				ball.x += 2;
-				speedBoost += 0.3f;
-			}
-
-
-		}
 
 		if ((ball.y < 0 && !ballUp) || (ball.y + ball.height > screenHeight && ballUp)) {
 			if (ballUp)ballUp = false;

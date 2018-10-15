@@ -37,11 +37,10 @@ int main(int args, char *argv[])
 //using namespace Pong;
 using namespace std;
 
-
 int main()
 {
 
 
-	//ejecutar();
+	ejecutar();
 
 }

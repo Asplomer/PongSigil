@@ -1,7 +1,7 @@
 #ifndef EJECUTAR_H
 #define EJECUTAR_H
-
-#include "raylib.h"
+#include "sl.h"
+//#include "raylib.h"
 
 namespace Pong {
 

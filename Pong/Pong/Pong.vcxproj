@@ -144,7 +144,11 @@ xcopy $(SolutionDir)lib\sigil-vc2015\wrap_oal.dll $(TargetDir) /y</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Ejecutar.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Ejecutar.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
