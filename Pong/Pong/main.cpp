@@ -34,7 +34,8 @@ int main(int args, char *argv[])
 	return 0;
 }*/
 #include <iostream>
-//using namespace Pong;
+#include "../src/Ejecutar.h"
+using namespace Pong;
 using namespace std;
 
 int main()

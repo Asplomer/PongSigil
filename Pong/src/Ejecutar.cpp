@@ -13,13 +13,6 @@ namespace Pong {
 	int score1 = 0;
 	int score2 = 0;
 	int gameState = 0;
-#ifdef AUDIO
-	Music music;
-	Sound fxWav;
-
-#endif
-
-
 	void ejecutar() {
 		init();
 		while (slShouldClose()!=0 && gameState != End) {
@@ -28,9 +21,6 @@ namespace Pong {
 		}
 	}
 	static void updateEjecutar() {
-#ifdef AUDIO
-		UpdateMusicStream(music);
-#endif
 		switch (gameState) {
 		case Start: {
 		//	UpdateStart();
@@ -86,9 +76,7 @@ namespace Pong {
 		int screenWidth = 800;
 		int screenHeight = 450;
 
-		slWindow(screenWidth, screenHeight, "raylib [core] example - keyboard input", 0);
-
-		//SetExitKey(0);
+		slWindow(screenWidth, screenHeight, "SIGIL SUCKS!, yet sigilPong", 0);
 
 		bool exit = false;
 
